@@ -27,12 +27,17 @@ def lambda_handler(event, context):
         if active_days > 89:
            mylist.append(str(user))
            mylist.append(str(" , "))
+    mylist.remove('USERTOIGNORE')
+    #here you can list this stanza over and over to keep users out of the report
+    ##mylist.remove('EXCEPTION USER 2')
+    print ("List Print")
     print (mylist)
+    print ("end of list print") 
     
             
     val= len(mylist)
     print (val)
-    if val > 4:
+    if val > 3:
         mylist.append(str(" Have these Users Login and rotate Access Keys ASAP"))
         str1 = ''.join(mylist)
         physicalString = str1
